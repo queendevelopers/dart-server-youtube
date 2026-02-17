@@ -25,7 +25,7 @@ Response _userProifleHandler(Request request) {
     "email": "nikeshmaharjan25@hotmail.com",
     "address": "Kathmandu, Nepal",
     "phone": 3025919912,
-    "linkedin": "https://www.linkedin.com/in/developersqueen",
+    "linkedin": "https://www.linkedin.com/in/queendevelopers",
     "imageUrl": "https://avatars.githubusercontent.com/u/122380441?v=4"
   };
   return Response.ok(jsonEncode(userProfileMap),
