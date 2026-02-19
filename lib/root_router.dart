@@ -1,6 +1,7 @@
 // Configure routes.
 import 'dart:convert';
 
+import 'package:server/models/profile_model.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
@@ -19,15 +20,15 @@ Response _echoHandler(Request request) {
 }
 
 Response _userProifleHandler(Request request) {
-  final userProfileMap = {
-    "name": "Nikesh Mahajan",
-    "age": 30,
-    "email": "nikeshmaharjan25@hotmail.com",
-    "address": "Kathmandu, Nepal",
-    "phone": 3025919912,
-    "linkedin": "https://www.linkedin.com/in/queendevelopers",
-    "imageUrl": "https://avatars.githubusercontent.com/u/122380441?v=4"
-  };
-  return Response.ok(jsonEncode(userProfileMap),
+  final profileModel = ProfileModel(
+      name: "Nikesh Maharjan",
+      email: "nikeshmaharjan25@hotmail.com",
+      age: 30,
+      address: "Kathmandu, Nepal",
+      phone: 3025919912,
+      linkedin: "https://www.linkedin.com/in/queendevelopers",
+      imageUrl: "https://avatars.githubusercontent.com/u/122380441?v=4");
+
+  return Response.ok(jsonEncode(profileModel.toJson()),
       headers: {'Content-Type': 'application/json'});
 }
